@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirección a GreenCircle App</title>
+    <script type="text/javascript">
+        // Función para intentar abrir la aplicación
+        function redirectToApp() {
+            // Intenta abrir la aplicación con el esquema GreenCircle
+            window.location.href = 'GreenCircle://';
+            // Si la aplicación no está instalada y el navegador no redirige automáticamente,
+            // puedes redirigir al usuario a una URL alternativa después de un breve retraso.
+            // Por ejemplo, a la Play Store o a una página web.
+            setTimeout(function() {
+                // URL de fallback, por ejemplo, la página de la aplicación en la Play Store
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.s1120258.greencircle';
+            }, 2500); // Ajusta este tiempo según sea necesario
+        }
+    </script>
+</head>
+<body onload="redirectToApp()">
+    <p>Si no eres redirigido automáticamente a la aplicación GreenCircle, por favor <a href="javascript:redirectToApp()">haz clic aquí</a>.</p>
+</body>
+</html>
